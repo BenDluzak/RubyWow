@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "http://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<script type="text/javascript" src= "https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script> 
+</head>
+<body>
+<title>WoW Factor - Realms Page</title>
+<link type = 'text/css' rel ='stylesheet' href='../realmTable.css'/>
+<link type='text/css' rel='stylesheet' href='../style.css'/>
+<link type='text/css' rel='stylesheet' href='../table.css'/>
+
+<div class="wrapper">
+    <div class="header">
+            <div class="logo">
+                <a href='../#'><img src="http://i.imgur.com/cvDbN6M.png" /></a>
+			</div>
+            <div class="nav">
+                <a href='/' /> Home </a>
+                <a href= "/character" /> Character </a>
+                <a href = "/guild" /> Guild </a>
+                <aa href='/realms' /> Realms </aa>
+                 <a href='/pvpLeaderboards' /> PvP Leaderboards </a>
+            </div>
+    </div>
+    <div id="main">
+    	<h1>Realm List</h1>
+	    <div class="RealmTable" id="realmsTable">  
+	    <script type="text/javascript">
+	$(document).ready(function() {
+    	$('#myTable').dataTable( {
+        	"pagingType": "full_numbers"
+   	 } );
+		} );  
+	</script>
+            <table id="myTable" class="tablesorter">
+ 			<thead >
+ 	  			<tr>
+		 	  		<td>Realm</td>
+		            <td>Status</td>
+		            <td>Type</td>
+		            <td>Population</td>
+		        </tr>
+ 			</thead>
+         	 <tbody>
+                <% for i in 0..245 %>
+                <tr>
+                    <td width="30%"><%= $realms[i].getName %></td>
+                    <% if( $realms[i].getStatus == true)  %>
+                    <td sorttable_customkey="0"><img src="http://i.imgur.com/VjmLUyV.png"></td>
+                    <% else %>              
+                    <td sorttable_customkey="1"><img src="http://i.imgur.com/fyUK5jU.png"></td>
+                    <% end %>
+                    <td><%= $realms[i].getType %></td>
+                    <td><%= $realms[i].getPopulation %></td>
+                </tr>
+                <% end %>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

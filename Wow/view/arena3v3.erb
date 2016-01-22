@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "http://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+</head>
+<body>
+<title>WoW Factor - 3v3 Rankings</title>
+
+<link type='text/css' rel='stylesheet' href='../style.css'/>
+<link type='text/css' rel='stylesheet' href='../table.css'/>
+
+<div class="wrapper">
+    <div class="header">
+            <div class="logo">
+                <a href='../#'><img src="http://i.imgur.com/cvDbN6M.png" /></a>
+            </div>
+            <div class="nav">
+                <a href='/' /> Home </a>
+                <a href= "/character" /> Character </a>
+                <a href = "/guild" /> Guild </a>
+                <a href='/realms' /> Realms </a>
+                 <aa href='/pvpLeaderboards' /> PvP Leaderboards </aa>
+            </div>
+    </div>
+    
+    <div id="main">
+
+		<div class="pvpButton">			
+			 <a href='/arena2v2' /> 2v2 Leaderboard </a>
+			 <aa href='/arena3v3' /> 3v3 Leaderboard </aa>
+			 <a href='/arena5v5' /> 5v5 Leaderboard </a>
+		     <a href='/RBG' /> RBG Leaderboard </a>
+	    </div>
+	     <div class="GuildTable" id="3v3Table">   
+            <table class="sortable">
+ 			<thead >
+ 	  			<tr>
+ 	  				<td>#</td>
+		 	  		<td>Name</td>
+		 	  		<td>Realm</td>
+		 	  		<td>Race</td>
+		            <td>Spec</td>
+		            <td>Class</td>
+		            <td>Rating</td>
+		            <td>Season Win/Loss</td>
+		            <td>Win %</td>
+		
+		        </tr>
+ 			</thead>
+         	 <tbody>
+    			<% for i in 0..$ladder.length-1 %>
+                <tr>
+                    <td><%= i+1 %> </td>
+                    <td><%= $ladder[i].getName %></td>
+                    <td><%= $ladder[i].getRealm %></td>
+                    <td><%= $ladder[i].getRace %></td>
+                    <td><%= $ladder[i].getSpec %></td>
+                    <td><%= $ladder[i].getClass %></td>
+                    <td><%= $ladder[i].getRating %></td>
+                    <td sorttable_customkey=<%= $ladder[i].getWinRatio %>><%= $ladder[i].getSeasonWins %>/<%= $ladder[i].getSeasonLosses %></td>
+                    <td><%= $ladder[i].getWinRatio %>%</td>
+                </tr>
+                <% end %>
+            </tbody>
+            </table>
+        </div>
+	 </div>
+
+</div>
+</body>
+</html>

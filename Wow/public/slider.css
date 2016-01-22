@@ -1,0 +1,64 @@
+#SliderSection {
+    width:600px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+/* For Slider 1 */
+#Actual {
+    overflow: auto;
+    background: wheat;
+    color: white;
+    width: 99%;
+}
+.slideup, .slidedown {
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.1s ease-in-out;
+    -moz-transition: max-height 0.1s ease-in-out;
+    -o-transition: max-height 0.1s ease-in-out;
+    transition: max-height 0.1s ease-in-out;
+}
+.slidedown {
+    max-height: 700px;
+    overflow: auto;
+}
+
+/* For Slider 2 */
+#Actual2 {
+    background: wheat;
+    color: white;
+    width: 99%;
+}
+.slideup2, .slidedown2 {
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.1s ease-in-out;
+    -moz-transition: max-height 0.1s ease-in-out;
+    -o-transition: max-height 0.1s ease-in-out;
+    transition: max-height 0.1s ease-in-out;
+}
+.slidedown2 {
+    max-height: 700px;
+    overflow: auto;
+}
+
+/* For Slider 3 */
+#Actual3 {
+    overflow: auto;
+    background: wheat;
+    color: white;
+    width: 99%;
+}
+.slideup3, .slidedown3 {
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.1s ease-in-out;
+    -moz-transition: max-height 0.1s ease-in-out;
+    -o-transition: max-height 0.1s ease-in-out;
+    transition: max-height 0.1s ease-in-out;
+}
+.slidedown3 {
+    max-height: 700px ;
+    overflow: auto;
+}
