@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+ gem 'sinatra' 
+ gem 'activesupport'
+ gem 'rest-client' 
+ gem 'restclient'
+ gem 'roo'
+ gem 'ap'
+gem 'crack'
